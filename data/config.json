@@ -17,70 +17,199 @@
       {
         "type": "user_events",
         "username": "karpathy",
-        "enabled": true
+        "enabled": false,
+        "comment": "Disabled - not relevant for product news"
       },
       {
         "type": "repo_releases",
         "owner": "vllm-project",
         "repo": "vllm",
-        "enabled": true
+        "enabled": false,
+        "comment": "Disabled - not relevant for product news"
       },
       {
         "type": "repo_releases",
         "owner": "sgl-project",
         "repo": "sglang",
-        "enabled": true
+        "enabled": false,
+        "comment": "Disabled - not relevant for product news"
       },
       {
         "type": "repo_releases",
         "owner": "triton-lang",
         "repo": "triton",
-        "enabled": true
+        "enabled": false,
+        "comment": "Disabled - not relevant for product news"
       }
     ],
     "hackernews": {
       "enabled": true,
-      "fetch_top_stories": 10,
-      "min_score": 200
+      "fetch_top_stories": 15,
+      "min_score": 100,
+      "comment": "Keep for Product Hunt style products"
     },
     "rss": [
       {
-        "name": "Simon Willison",
-        "url": "https://simonwillison.net/atom/everything/",
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com/feed",
         "enabled": true,
-        "category": "ai-tools"
+        "category": "product-discovery"
       },
       {
-        "name": "GitHub Trending - Daily",
-        "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml",
+        "name": "Gadget Flow",
+        "url": "https://thegadgetflow.com/feed/",
         "enabled": true,
-        "category": "github-trending"
+        "category": "gadgets"
       },
       {
-        "name": "LWN.net",
-        "url": "https://lwn.net/headlines/full_text?key=${LWN_KEY}",
+        "name": "Trendy Gadget",
+        "url": "https://www.trendygadget.com/feed/",
         "enabled": true,
-        "category": "linux-kernel"
+        "category": "gadgets"
+      },
+      {
+        "name": "The Gadgeteer",
+        "url": "https://the-gadgeteer.com/feed/",
+        "enabled": true,
+        "category": "gadgets"
+      },
+      {
+        "name": "Engadget",
+        "url": "https://www.engadget.com/rss.xml",
+        "enabled": true,
+        "category": "tech-products"
+      },
+      {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/rss/index.xml",
+        "enabled": true,
+        "category": "tech-products"
+      },
+      {
+        "name": "TechCrunch Hardware",
+        "url": "https://techcrunch.com/category/hardware/feed/",
+        "enabled": true,
+        "category": "hardware"
+      },
+      {
+        "name": "Hypebeast",
+        "url": "https://hypebeast.com/feed",
+        "enabled": true,
+        "category": "fashion-culture"
+      },
+      {
+        "name": "Cool Hunting",
+        "url": "https://coolhunting.com/feed/",
+        "enabled": true,
+        "category": "design-trends"
       }
     ],
     "reddit": {
       "enabled": true,
       "subreddits": [
         {
-          "subreddit": "MachineLearning",
+          "subreddit": "ProductHunters",
           "enabled": true,
           "sort": "hot",
           "time_filter": "day",
-          "fetch_limit": 15,
-          "min_score": 60
+          "fetch_limit": 20,
+          "min_score": 50
         },
         {
-          "subreddit": "LocalLLaMA",
+          "subreddit": "shutupandtakemymoney",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 20,
+          "min_score": 100
+        },
+        {
+          "subreddit": "DidntKnowIWantedThat",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 20,
+          "min_score": 100
+        },
+        {
+          "subreddit": "ProductPorn",
           "enabled": true,
           "sort": "hot",
           "time_filter": "day",
           "fetch_limit": 15,
-          "min_score": 60
+          "min_score": 50
+        },
+        {
+          "subreddit": "BuyItForLife",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 100
+        },
+        {
+          "subreddit": "Entrepreneur",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 100
+        },
+        {
+          "subreddit": "ecommerce",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 50
+        },
+        {
+          "subreddit": "AmazonSeller",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 50
+        },
+        {
+          "subreddit": "dropship",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 50
+        },
+        {
+          "subreddit": "streetwear",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 100
+        },
+        {
+          "subreddit": "sneakers",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 100
+        },
+        {
+          "subreddit": "MakeupAddiction",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 10,
+          "min_score": 100
+        },
+        {
+          "subreddit": "gadgets",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 100
         }
       ],
       "users": [],
@@ -92,7 +221,8 @@
         {
           "channel": "zaihuapd",
           "enabled": true,
-          "fetch_limit": 20
+          "fetch_limit": 20,
+          "comment": "Keep for Chinese market trends"
         }
       ]
     }
