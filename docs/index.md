@@ -3,14 +3,14 @@ layout: default
 title: Home
 ---
 
-# Horizon
+# Product News
 
-Welcome to [Horizon](https://github.com/thysrael/Horizon), an AI-driven information aggregation system.
+Welcome to [Product News](https://github.com/LemonPP-byte/Product-News), an AI-driven consumer product intelligence system.
 
 ## Documentation
 
 - [Configuration Guide](configuration) — AI providers, information sources, filtering, and environment variable substitution
-- [Source Scrapers](scrapers) — How Horizon collects content from GitHub, Hacker News, RSS, and Reddit
+- [Source Scrapers](scrapers) — How Product News collects content from Product Hunt, Reddit, RSS feeds and more
 - [Scoring System](scoring) — AI-based content analysis and the 0-10 scoring scale
 
 ## 中文速递
