@@ -79,18 +79,10 @@
                     <a href="{{ today_zh_post.url | relative_url }}" class="view-full">查看完整版 →</a>
                 </div>
 
-                <!-- Extract and display product list from post content -->
-                {% assign content_lines = today_zh_post.content | split: "---" %}
-                {% if content_lines.size > 1 %}
-                    {% assign toc_section = content_lines[0] | split: newline %}
-                    <ul class="today-product-list">
-                    {% for line in toc_section %}
-                        {% if line contains ". [" %}
-                            <li class="product-item">{{ line | strip }}</li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
-                {% endif %}
+                <!-- Display product list -->
+                <div class="today-product-preview">
+                    {{ today_zh_post.content | split: "---" | first | markdownify }}
+                </div>
             </div>
             {% endif %}
 
@@ -113,18 +105,10 @@
                     <a href="{{ today_en_post.url | relative_url }}" class="view-full">View Full Report →</a>
                 </div>
 
-                <!-- Extract and display product list from post content -->
-                {% assign content_lines = today_en_post.content | split: "---" %}
-                {% if content_lines.size > 1 %}
-                    {% assign toc_section = content_lines[0] | split: newline %}
-                    <ul class="today-product-list">
-                    {% for line in toc_section %}
-                        {% if line contains ". [" %}
-                            <li class="product-item">{{ line | strip }}</li>
-                        {% endif %}
-                    {% endfor %}
-                    </ul>
-                {% endif %}
+                <!-- Display product list -->
+                <div class="today-product-preview">
+                    {{ today_en_post.content | split: "---" | first | markdownify }}
+                </div>
             </div>
             {% endif %}
         </div>
