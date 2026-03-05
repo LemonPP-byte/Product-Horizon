@@ -10,8 +10,8 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: #0a0a0a;
-    color: #e0e0e0;
+    background: #ffffff;
+    color: #1a1a1a;
     line-height: 1.6;
 }
 
@@ -29,10 +29,10 @@ a {
 /* Hero Section */
 .hero {
     position: relative;
-    min-height: 60vh;
+    min-height: 50vh;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -44,8 +44,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.92) 0%, rgba(20, 10, 5, 0.88) 100%);
-    backdrop-filter: blur(2px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.92) 100%);
 }
 
 .hero-content {
@@ -61,14 +60,14 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 0;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .logo {
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: #ff6b35;
+    color: #2a2a2a;
 }
 
 .nav-links {
@@ -79,16 +78,17 @@ a {
 
 .nav-links a {
     font-size: 0.95rem;
+    color: #666;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #ff6b35;
+    color: #2a2a2a;
 }
 
 .cta-button {
-    background: #ff6b35;
-    color: #0a0a0a;
+    background: #2a2a2a;
+    color: #ffffff;
     padding: 0.6rem 1.5rem;
     border-radius: 4px;
     font-weight: 600;
@@ -96,37 +96,34 @@ a {
 }
 
 .cta-button:hover {
-    background: #ff8555;
+    background: #1a1a1a;
     transform: translateY(-2px);
 }
 
 /* Hero Text */
 .hero-text {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .hero-text h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #ffffff 0%, #ff6b35 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #1a1a1a;
 }
 
 .tagline {
-    font-size: 1.2rem;
-    color: #b0b0b0;
+    font-size: 1.1rem;
+    color: #666;
     max-width: 600px;
 }
 
 /* Features Bar */
 .features-bar {
-    background: #0f0f0f;
-    border-top: 1px solid rgba(255, 107, 53, 0.2);
-    border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+    background: #fafafa;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
     padding: 2rem 0;
 }
 
@@ -141,39 +138,56 @@ a {
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 107, 53, 0.2);
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
     transition: all 0.3s;
     text-align: center;
 }
 
 .feature-item:hover {
-    background: rgba(255, 107, 53, 0.08);
-    border-color: rgba(255, 107, 53, 0.4);
+    border-color: #2a2a2a;
     transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .feature-number {
     font-size: 0.85rem;
-    color: #ff6b35;
+    color: #999;
     font-weight: 600;
 }
 
 .feature-text {
     font-size: 1rem;
     font-weight: 500;
+    color: #2a2a2a;
 }
 
 /* Today's Digest Section */
 .today-section {
-    background: #0a0a0a;
+    background: #ffffff;
     padding: 4rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #666;
 }
 
 .today-date {
     font-size: 1.2rem;
-    color: #ff6b35;
+    color: #2a2a2a;
     font-weight: 600;
 }
 
@@ -189,8 +203,8 @@ a {
 }
 
 .badge {
-    background: #ff6b35;
-    color: #0a0a0a;
+    background: #2a2a2a;
+    color: #ffffff;
     padding: 0.3rem 0.8rem;
     border-radius: 4px;
     font-size: 0.75rem;
@@ -201,7 +215,7 @@ a {
 .today-title .accent {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #1a1a1a;
 }
 
 .today-card {
@@ -209,50 +223,35 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
-    border: 2px solid rgba(255, 107, 53, 0.3);
+    background: #fafafa;
+    border: 2px solid #e0e0e0;
     border-radius: 12px;
     transition: all 0.3s;
 }
 
 .today-card:hover {
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(255, 107, 53, 0.08) 100%);
-    border-color: rgba(255, 107, 53, 0.5);
+    background: #f5f5f5;
+    border-color: #2a2a2a;
     transform: translateX(8px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .card-date {
     font-size: 1.1rem;
-    color: #ff6b35;
+    color: #666;
     font-weight: 600;
 }
 
 .card-title {
     font-size: 1.3rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #1a1a1a;
 }
 
 /* Digest Section (Archive) */
 .digest-section {
-    background: #0f0f0f;
+    background: #fafafa;
     padding: 4rem 0;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.section-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
-}
-
-.section-header p {
-    font-size: 1.1rem;
-    color: #888;
 }
 
 .digest-block {
@@ -265,18 +264,18 @@ a {
     gap: 1rem;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid rgba(255, 107, 53, 0.3);
+    border-bottom: 2px solid #e0e0e0;
 }
 
 .digest-title .accent {
     font-size: 2rem;
     font-weight: 700;
-    color: #ff6b35;
+    color: #1a1a1a;
 }
 
 .digest-title .subtitle {
     font-size: 1rem;
-    color: #666;
+    color: #999;
     font-weight: 400;
 }
 
@@ -289,21 +288,21 @@ a {
 }
 
 .post-item {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
     border-radius: 6px;
     transition: all 0.3s;
 }
 
 .post-item.today {
-    background: rgba(255, 107, 53, 0.08);
-    border-color: rgba(255, 107, 53, 0.3);
+    background: #f5f5f5;
+    border-color: #2a2a2a;
 }
 
 .post-item:hover {
-    background: rgba(255, 107, 53, 0.05);
-    border-color: rgba(255, 107, 53, 0.3);
+    border-color: #2a2a2a;
     transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .post-item a {
@@ -315,8 +314,8 @@ a {
 }
 
 .today-badge {
-    background: #ff6b35;
-    color: #0a0a0a;
+    background: #2a2a2a;
+    color: #ffffff;
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
     font-size: 0.7rem;
@@ -327,10 +326,11 @@ a {
 .post-date {
     font-size: 1rem;
     font-weight: 500;
+    color: #2a2a2a;
 }
 
 .post-arrow {
-    color: #ff6b35;
+    color: #666;
     font-size: 1.2rem;
     transition: transform 0.3s;
     margin-left: auto;
@@ -338,24 +338,25 @@ a {
 
 .post-item:hover .post-arrow {
     transform: translateX(4px);
+    color: #2a2a2a;
 }
 
 .post-item.empty {
-    color: #666;
+    color: #999;
     padding: 1.2rem 1.5rem;
     font-style: italic;
 }
 
 /* Documentation Section */
 .docs-section {
-    background: #0f0f0f;
+    background: #ffffff;
     padding: 6rem 0;
 }
 
 .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #ffffff;
+    color: #1a1a1a;
 }
 
 .docs-grid {
@@ -365,50 +366,50 @@ a {
 }
 
 .doc-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 2rem;
     transition: all 0.3s;
 }
 
 .doc-card:hover {
-    background: rgba(255, 107, 53, 0.05);
-    border-color: rgba(255, 107, 53, 0.3);
+    border-color: #2a2a2a;
     transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .doc-card h4 {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
-    color: #ff6b35;
+    color: #1a1a1a;
 }
 
 .doc-card p {
-    color: #999;
+    color: #666;
     line-height: 1.6;
 }
 
 /* Footer */
 .footer {
-    background: #050505;
+    background: #2a2a2a;
     padding: 3rem 0;
     text-align: center;
-    border-top: 1px solid rgba(255, 107, 53, 0.2);
+    border-top: 1px solid #e0e0e0;
 }
 
 .footer p {
-    color: #666;
+    color: #999;
     margin-bottom: 0.5rem;
 }
 
 .footer a {
-    color: #ff6b35;
+    color: #ffffff;
     transition: color 0.3s;
 }
 
 .footer a:hover {
-    color: #ff8555;
+    color: #e0e0e0;
 }
 
 /* Responsive Design */
@@ -454,3 +455,4 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
