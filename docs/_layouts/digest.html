@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/digest-style.css' | relative_url }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="logo">Product Horizon</div>
+            <div class="nav-links">
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="https://github.com/LemonPP-byte/Product-News">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Date Slider -->
+    <section class="date-slider-section">
+        <div class="container">
+            <div class="date-slider">
+                <button class="slider-arrow left" onclick="scrollDates(-1)">‹</button>
+                <div class="date-list" id="dateList">
+                    {% assign en_posts = site.posts | where: "lang", "en" %}
+                    {% for post in en_posts limit:30 %}
+                    <a href="#" class="date-item {% if forloop.first %}active{% endif %}"
+                       data-date="{{ post.date | date: '%Y-%m-%d' }}"
+                       onclick="loadDate('{{ post.date | date: '%Y-%m-%d' }}', '{{ post.url | relative_url }}'); return false;">
+                        {{ post.date | date: "%b %d" }}
+                    </a>
+                    {% endfor %}
+                </div>
+                <button class="slider-arrow right" onclick="scrollDates(1)">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Content -->
+    <section class="product-content-section">
+        <div class="container">
+            <div id="productContent">
+                {% assign today = site.time | date: "%Y-%m-%d" %}
+                {% assign en_posts = site.posts | where: "lang", "en" %}
+                {% assign latest_post = en_posts | first %}
+
+                {% if latest_post %}
+                    {% include product-list.html post=latest_post %}
+                {% else %}
+                    <p class="no-content">No products available yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Product Horizon. Powered by AI.</p>
+            <p><a href="https://github.com/LemonPP-byte/Product-News" target="_blank">View on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollDates(direction) {
+            const dateList = document.getElementById('dateList');
+            const scrollAmount = 200;
+            dateList.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        function loadDate(date, url) {
+            // Update active state
+            document.querySelectorAll('.date-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Load content via AJAX or redirect
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
 ---
-layout: home
-title: Product Horizon - AI-Curated Product Intelligence
+layout: digest
+title: Product Horizon - Daily Product Intelligence
 ---

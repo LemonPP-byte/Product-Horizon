@@ -1,0 +1,43 @@
+{% assign content_parts = include.post.content | split: "---" %}
+
+<!-- Summary quote -->
+{{ content_parts[0] | markdownify }}
+
+<!-- Parse products from content -->
+{% assign products_html = content_parts[2] %}
+{% assign product_blocks = products_html | split: '<a id="item-' %}
+
+<div class="product-list">
+{% for block in product_blocks offset:1 %}
+    {% assign item_parts = block | split: '</a>' %}
+    {% if item_parts.size > 1 %}
+        {% assign header_and_rest = item_parts[1] | split: '##' %}
+        {% assign title_line = header_and_rest[0] | strip %}
+        {% assign title_parts = title_line | split: '⭐️' %}
+        {% assign title = title_parts[0] | strip | remove: '##' | remove: '[' | remove: ']' | split: '(' %}
+        {% assign product_title = title[0] | strip %}
+        {% assign product_url = title[1] | strip | remove: ')' %}
+        {% assign rating = title_parts[1] | strip %}
+
+        {% assign rest_content = item_parts[1] | split: '**Tags**' %}
+        {% assign description_part = rest_content[0] | split: '##' | last | strip %}
+        {% assign desc_lines = description_part | split: newline %}
+        {% assign description = desc_lines[2] | strip %}
+        {% assign source_line = desc_lines[4] | strip %}
+        {% assign tags = rest_content[1] | strip %}
+
+        <div class="product-item">
+            <div class="product-title-row" onclick="this.parentElement.classList.toggle('expanded')">
+                <span class="expand-arrow">▶</span>
+                <a href="{{ product_url }}" target="_blank" onclick="event.stopPropagation()">{{ product_title }}</a>
+                <span class="product-rating">⭐️ {{ rating }}</span>
+            </div>
+            <div class="product-detail-content">
+                <p class="product-description">{{ description }}</p>
+                <p class="product-source">{{ source_line }}</p>
+                <p class="product-tags">{{ tags }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+</div>
