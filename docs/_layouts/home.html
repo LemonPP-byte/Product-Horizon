@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <!-- Hero Section with Background Image -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <nav class="nav">
+                <div class="logo">Product Horizon</div>
+                <div class="nav-links">
+                    <a href="{{ '/' | relative_url }}">Home</a>
+                    <a href="https://github.com/LemonPP-byte/Product-News">About</a>
+                    <a href="#digest" class="cta-button">View Digest</a>
+                </div>
+            </nav>
+
+            <div class="hero-text">
+                <h1>Product<br>Horizon</h1>
+                <p class="tagline">AI-curated daily digest of niche products and market trends</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-item">
+                    <span class="feature-number">#01</span>
+                    <span class="feature-text">Niche Products</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">#02</span>
+                    <span class="feature-text">Crowdfunding</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">#03</span>
+                    <span class="feature-text">Global Markets</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-number">#04</span>
+                    <span class="feature-text">AI Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Digest Section -->
+    <section id="digest" class="digest-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Daily Product Intelligence</h2>
+                <p>Discover trending products, market opportunities, and consumer insights</p>
+            </div>
+
+            <!-- Chinese Digest -->
+            <div class="digest-block">
+                <h3 class="digest-title">
+                    <span class="accent">中文速递</span>
+                    <span class="subtitle">Chinese Digest</span>
+                </h3>
+                <ul class="post-list">
+                    {% assign zh_posts = site.posts | where: "lang", "zh" %}
+                    {% for post in zh_posts limit:20 %}
+                    <li class="post-item">
+                        <a href="{{ post.url | relative_url }}">
+                            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                            <span class="post-arrow">→</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="post-item empty">暂无内容</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- English Digest -->
+            <div class="digest-block">
+                <h3 class="digest-title">
+                    <span class="accent">English Digest</span>
+                    <span class="subtitle">Daily Updates</span>
+                </h3>
+                <ul class="post-list">
+                    {% assign en_posts = site.posts | where: "lang", "en" %}
+                    {% for post in en_posts limit:20 %}
+                    <li class="post-item">
+                        <a href="{{ post.url | relative_url }}">
+                            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                            <span class="post-arrow">→</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="post-item empty">No posts yet</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section class="docs-section">
+        <div class="container">
+            <h3 class="section-title">Documentation</h3>
+            <div class="docs-grid">
+                <a href="{{ '/configuration' | relative_url }}" class="doc-card">
+                    <h4>Configuration Guide</h4>
+                    <p>AI providers, information sources, and filtering</p>
+                </a>
+                <a href="{{ '/scrapers' | relative_url }}" class="doc-card">
+                    <h4>Source Scrapers</h4>
+                    <p>How we collect content from various platforms</p>
+                </a>
+                <a href="{{ '/scoring' | relative_url }}" class="doc-card">
+                    <h4>Scoring System</h4>
+                    <p>AI-based content analysis and scoring</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Product Horizon. Powered by AI.</p>
+            <p><a href="https://github.com/LemonPP-byte/Product-News" target="_blank">View on GitHub</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Get latest post image for hero background
+        fetch('{{ site.baseurl }}/feed.json')
+            .then(response => response.json())
+            .then(data => {
+                if (data.items && data.items[0] && data.items[0].image) {
+                    document.querySelector('.hero').style.backgroundImage = `url(${data.items[0].image})`;
+                }
+            })
+            .catch(() => {
+                // Fallback to gradient if no image
+                document.querySelector('.hero').style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2d1810 100%)';
+            });
+    </script>
+</body>
+</html>
