@@ -61,7 +61,13 @@
 
             <!-- Today's Chinese Digest -->
             {% assign today = site.time | date: "%Y-%m-%d" %}
-            {% assign today_zh_post = site.posts | where: "lang", "zh" | where_exp: "post", "post.date | date: '%Y-%m-%d' == today" | first %}
+            {% assign zh_posts = site.posts | where: "lang", "zh" %}
+            {% for post in zh_posts limit:1 %}
+                {% assign post_date = post.date | date: "%Y-%m-%d" %}
+                {% if post_date == today %}
+                    {% assign today_zh_post = post %}
+                {% endif %}
+            {% endfor %}
 
             {% if today_zh_post %}
             <div class="today-digest">
@@ -77,7 +83,13 @@
             {% endif %}
 
             <!-- Today's English Digest -->
-            {% assign today_en_post = site.posts | where: "lang", "en" | where_exp: "post", "post.date | date: '%Y-%m-%d' == today" | first %}
+            {% assign en_posts = site.posts | where: "lang", "en" %}
+            {% for post in en_posts limit:1 %}
+                {% assign post_date = post.date | date: "%Y-%m-%d" %}
+                {% if post_date == today %}
+                    {% assign today_en_post = post %}
+                {% endif %}
+            {% endfor %}
 
             {% if today_en_post %}
             <div class="today-digest">
