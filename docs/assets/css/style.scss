@@ -257,93 +257,105 @@ a {
     font-size: 0.95rem;
 }
 
-.today-product-preview ol {
+.today-product-preview > ol {
     display: none;
 }
 
-.product-expandable {
-    border-bottom: 1px solid #e0e0e0;
-    transition: all 0.2s;
+.product-list {
+    margin: 0;
+    padding: 0;
 }
 
-.product-expandable:last-child {
+.product-item {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.2s;
+}
+
+.product-item:last-child {
     border-bottom: none;
 }
 
-.product-header {
+.product-title-row {
     padding: 0.8rem 0;
-    cursor: pointer;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.8rem;
+    cursor: pointer;
     transition: all 0.2s;
 }
 
-.product-header:hover {
+.product-title-row:hover {
     background: #fafafa;
     padding-left: 0.5rem;
 }
 
-.expand-icon {
+.expand-arrow {
     color: #808080;
-    font-size: 0.8rem;
-    transition: transform 0.2s;
+    font-size: 0.7rem;
+    transition: transform 0.3s;
     flex-shrink: 0;
-    margin-top: 0.3rem;
 }
 
-.product-expandable.expanded .expand-icon {
+.product-item.expanded .expand-arrow {
     transform: rotate(90deg);
 }
 
-.product-header h2 {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 500;
+.product-title-row a {
     color: #2a2a2a;
-    border: none;
-    padding: 0;
+    text-decoration: none;
+    font-size: 1rem;
+    flex: 1;
     line-height: 1.4;
 }
 
-.product-header h2 a {
-    color: #2a2a2a;
-    text-decoration: none;
-}
-
-.product-header h2 a:hover {
+.product-title-row a:hover {
     text-decoration: underline;
 }
 
-.product-details {
+.product-rating {
+    color: #808080;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.product-detail-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
     padding: 0 0 0 2rem;
 }
 
-.product-expandable.expanded .product-details {
-    max-height: 500px;
-    padding: 0 0 1rem 2rem;
+.product-item.expanded .product-detail-content {
+    max-height: 600px;
+    padding: 0.5rem 0 1rem 2rem;
 }
 
-.product-details p {
-    color: #666;
+.product-description {
+    color: #4a4a4a;
     font-size: 0.95rem;
     line-height: 1.6;
     margin: 0.5rem 0;
 }
 
-.product-details strong {
-    color: #2a2a2a;
+.product-source {
+    color: #808080;
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
 }
 
-.product-details code {
+.product-tags {
+    color: #666;
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+}
+
+.product-tags code {
     background: #f5f5f5;
     color: #2a2a2a;
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
 }
 
 /* Digest Section (Archive) */
