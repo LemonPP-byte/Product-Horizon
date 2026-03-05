@@ -70,15 +70,27 @@
             {% endfor %}
 
             {% if today_zh_post %}
-            <div class="today-digest">
-                <h3 class="today-title">
-                    <span class="badge">NEW</span>
-                    <span class="accent">今日中文速递</span>
-                </h3>
-                <a href="{{ today_zh_post.url | relative_url }}" class="today-card">
-                    <span class="card-date">{{ today_zh_post.date | date: "%Y-%m-%d" }}</span>
-                    <span class="card-title">查看今日产品推荐 →</span>
-                </a>
+            <div class="today-digest-expanded">
+                <div class="digest-header">
+                    <h3 class="today-title">
+                        <span class="badge">NEW</span>
+                        <span class="accent">今日中文速递</span>
+                    </h3>
+                    <a href="{{ today_zh_post.url | relative_url }}" class="view-full">查看完整版 →</a>
+                </div>
+
+                <!-- Extract and display product list from post content -->
+                {% assign content_lines = today_zh_post.content | split: "---" %}
+                {% if content_lines.size > 1 %}
+                    {% assign toc_section = content_lines[0] | split: newline %}
+                    <ul class="today-product-list">
+                    {% for line in toc_section %}
+                        {% if line contains ". [" %}
+                            <li class="product-item">{{ line | strip }}</li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
             {% endif %}
 
@@ -92,15 +104,27 @@
             {% endfor %}
 
             {% if today_en_post %}
-            <div class="today-digest">
-                <h3 class="today-title">
-                    <span class="badge">NEW</span>
-                    <span class="accent">Today's English Digest</span>
-                </h3>
-                <a href="{{ today_en_post.url | relative_url }}" class="today-card">
-                    <span class="card-date">{{ today_en_post.date | date: "%Y-%m-%d" }}</span>
-                    <span class="card-title">View Today's Products →</span>
-                </a>
+            <div class="today-digest-expanded">
+                <div class="digest-header">
+                    <h3 class="today-title">
+                        <span class="badge">NEW</span>
+                        <span class="accent">Today's English Digest</span>
+                    </h3>
+                    <a href="{{ today_en_post.url | relative_url }}" class="view-full">View Full Report →</a>
+                </div>
+
+                <!-- Extract and display product list from post content -->
+                {% assign content_lines = today_en_post.content | split: "---" %}
+                {% if content_lines.size > 1 %}
+                    {% assign toc_section = content_lines[0] | split: newline %}
+                    <ul class="today-product-list">
+                    {% for line in toc_section %}
+                        {% if line contains ". [" %}
+                            <li class="product-item">{{ line | strip }}</li>
+                        {% endif %}
+                    {% endfor %}
+                    </ul>
+                {% endif %}
             </div>
             {% endif %}
         </div>

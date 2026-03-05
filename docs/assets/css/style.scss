@@ -191,15 +191,27 @@ a {
     font-weight: 600;
 }
 
-.today-digest {
-    margin-bottom: 3rem;
+.today-digest-expanded {
+    margin-bottom: 4rem;
+    background: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.digest-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #e0e0e0;
 }
 
 .today-title {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
 }
 
 .badge {
@@ -218,34 +230,49 @@ a {
     color: #1a1a1a;
 }
 
-.today-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-    background: #fafafa;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
+.view-full {
+    color: #2a2a2a;
+    font-weight: 600;
+    font-size: 1rem;
     transition: all 0.3s;
+    white-space: nowrap;
 }
 
-.today-card:hover {
-    background: #f5f5f5;
-    border-color: #2a2a2a;
-    transform: translateX(8px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.card-date {
-    font-size: 1.1rem;
+.view-full:hover {
     color: #666;
-    font-weight: 600;
+    transform: translateX(4px);
 }
 
-.card-title {
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #1a1a1a;
+.today-product-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 0.8rem;
+}
+
+.product-item {
+    padding: 1rem 1.5rem;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.product-item:hover {
+    border-color: #2a2a2a;
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.product-item a {
+    color: #2a2a2a;
+    text-decoration: none;
+}
+
+.product-item a:hover {
+    text-decoration: underline;
 }
 
 /* Digest Section (Archive) */
@@ -436,10 +463,14 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .today-card {
+    .digest-header {
         flex-direction: column;
+        align-items: flex-start;
         gap: 1rem;
-        text-align: center;
+    }
+
+    .today-product-list {
+        grid-template-columns: 1fr;
     }
 
     .post-list {
