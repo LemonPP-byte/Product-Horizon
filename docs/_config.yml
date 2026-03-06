@@ -1,6 +1,6 @@
 title: Product News Daily
 description: AI-curated daily digest of consumer products and market trends
-baseurl: "/Product-News" # the subpath of your site, e.g. /blog
+baseurl: "/Product-Horizon" # the subpath of your site, e.g. /blog
 url: "https://lemonpp-byte.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
