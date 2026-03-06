@@ -49,11 +49,6 @@
     <!-- Today's Digest Section -->
     <section id="today" class="today-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Today's Product Intelligence</h2>
-                <p class="today-date">{{ site.time | date: "%Y-%m-%d" }}</p>
-            </div>
-
             <!-- Today's Chinese Digest -->
             {% assign today = site.time | date: "%Y-%m-%d" %}
             {% assign zh_posts = site.posts | where: "lang", "zh" %}
