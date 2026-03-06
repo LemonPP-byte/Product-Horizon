@@ -11,7 +11,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: #ffffff;
-    color: #1a1a1a;
+    color: #000000;
     line-height: 1.6;
 }
 
@@ -30,12 +30,13 @@ a {
 .hero {
     position: relative;
     min-height: 20vh;
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    background: #ffffff;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     overflow: hidden;
+    border-bottom: 1px solid #000000;
 }
 
 .hero-overlay {
@@ -44,7 +45,7 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.92) 100%);
+    background: rgba(255, 255, 255, 0.95);
 }
 
 .hero-content {
@@ -64,10 +65,11 @@ a {
 }
 
 .logo {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: #2a2a2a;
+    color: #000000;
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -77,27 +79,27 @@ a {
 }
 
 .nav-links a {
-    font-size: 0.95rem;
-    color: #666;
-    transition: color 0.3s;
+    font-size: 0.875rem;
+    color: #000000;
+    transition: opacity 0.3s;
+    font-weight: 400;
 }
 
 .nav-links a:hover {
-    color: #2a2a2a;
+    opacity: 0.5;
 }
 
 .cta-button {
-    background: #2a2a2a;
+    background: #000000;
     color: #ffffff;
     padding: 0.6rem 1.5rem;
-    border-radius: 4px;
+    border-radius: 0;
     font-weight: 600;
     transition: all 0.3s;
 }
 
 .cta-button:hover {
-    background: #1a1a1a;
-    transform: translateY(-2px);
+    opacity: 0.8;
 }
 
 /* Hero Text */
@@ -110,12 +112,12 @@ a {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 0.5rem;
-    color: #1a1a1a;
+    color: #000000;
 }
 
 .tagline {
     font-size: 0.9rem;
-    color: #666;
+    color: #808080;
     max-width: 600px;
 }
 
@@ -139,16 +141,16 @@ a {
     align-items: center;
     gap: 0.3rem;
     font-size: 0.75rem;
-    color: #666;
+    color: #808080;
 }
 
 .feature-item:hover {
-    color: #2a2a2a;
+    color: #000000;
 }
 
 .feature-number {
     font-size: 0.7rem;
-    color: #999;
+    color: #808080;
     font-weight: 600;
 }
 
@@ -172,25 +174,25 @@ a {
 .section-header h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #1a1a1a;
+    color: #000000;
 }
 
 .section-header p {
     font-size: 1.1rem;
-    color: #666;
+    color: #808080;
 }
 
 .today-date {
     font-size: 1.2rem;
-    color: #2a2a2a;
+    color: #000000;
     font-weight: 600;
 }
 
 .today-digest-expanded {
     margin-bottom: 4rem;
     background: #fafafa;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
+    border: 1px solid #000000;
+    border-radius: 0;
     padding: 2rem;
 }
 
@@ -200,7 +202,7 @@ a {
     align-items: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 1px solid #000000;
 }
 
 .today-title {
@@ -210,10 +212,10 @@ a {
 }
 
 .badge {
-    background: #2a2a2a;
+    background: #000000;
     color: #ffffff;
     padding: 0.3rem 0.8rem;
-    border-radius: 4px;
+    border-radius: 0;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -222,34 +224,33 @@ a {
 .today-title .accent {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #000000;
 }
 
 .view-full {
-    color: #2a2a2a;
+    color: #000000;
     font-weight: 600;
     font-size: 1rem;
-    transition: all 0.3s;
+    transition: opacity 0.3s;
     white-space: nowrap;
 }
 
 .view-full:hover {
-    color: #666;
-    transform: translateX(4px);
+    opacity: 0.5;
 }
 
 .today-product-preview {
-    color: #2a2a2a;
+    color: #000000;
 }
 
 .today-product-preview blockquote {
-    background: #ffffff;
-    border-left: 4px solid #2a2a2a;
+    background: #fafafa;
+    border-left: 2px solid #000000;
     padding: 1rem 1.5rem;
     margin: 0 0 1.5rem 0;
     color: #808080;
-    font-style: italic;
-    font-size: 0.95rem;
+    font-style: normal;
+    font-size: 0.875rem;
 }
 
 .today-product-preview > ol {
@@ -262,7 +263,7 @@ a {
 }
 
 .product-item {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #000000;
     transition: background 0.2s;
 }
 
@@ -271,17 +272,16 @@ a {
 }
 
 .product-title-row {
-    padding: 0.8rem 0;
+    padding: 1rem 0;
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
     cursor: pointer;
     transition: all 0.2s;
 }
 
 .product-title-row:hover {
-    background: #fafafa;
-    padding-left: 0.5rem;
+    opacity: 0.7;
 }
 
 .expand-arrow {
@@ -296,20 +296,21 @@ a {
 }
 
 .product-title-row a {
-    color: #2a2a2a;
+    color: #000000;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.125rem;
     flex: 1;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
 .product-title-row a:hover {
-    text-decoration: underline;
+    opacity: 0.5;
 }
 
 .product-rating {
     color: #808080;
-    font-size: 0.9rem;
+    font-size: 0.875rem;
     white-space: nowrap;
 }
 
@@ -317,46 +318,48 @@ a {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-    padding: 0 0 0 2rem;
+    padding: 0 0 0 3.5rem;
 }
 
 .product-item.expanded .product-detail-content {
     max-height: 600px;
-    padding: 0.5rem 0 1rem 2rem;
+    padding: 0.5rem 0 1.5rem 3.5rem;
 }
 
 .product-description {
-    color: #4a4a4a;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0.5rem 0;
+    color: #808080;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    margin: 0 0 0.8rem 0;
 }
 
 .product-source {
     color: #808080;
-    font-size: 0.85rem;
-    margin: 0.5rem 0;
+    font-size: 0.8125rem;
+    margin: 0 0 0.8rem 0;
 }
 
 .product-tags {
-    color: #666;
-    font-size: 0.85rem;
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0 0;
 }
 
 .product-tags code {
-    background: #f5f5f5;
-    color: #2a2a2a;
-    padding: 0.2rem 0.4rem;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    margin-right: 0.3rem;
+    background: #000000;
+    color: #ffffff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0;
+    font-size: 0.8125rem;
+    margin-right: 0.4rem;
+    border: none;
+    display: inline-block;
+    margin-bottom: 0.3rem;
 }
 
 /* Digest Section (Archive) */
 .digest-section {
-    background: #fafafa;
+    background: #ffffff;
     padding: 4rem 0;
+    border-top: 1px solid #000000;
 }
 
 .digest-block {
@@ -369,18 +372,18 @@ a {
     gap: 1rem;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #e0e0e0;
+    border-bottom: 1px solid #000000;
 }
 
 .digest-title .accent {
     font-size: 2rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #000000;
 }
 
 .digest-title .subtitle {
     font-size: 1rem;
-    color: #999;
+    color: #808080;
     font-weight: 400;
 }
 
@@ -394,20 +397,22 @@ a {
 
 .post-item {
     background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
+    border: 1px solid #000000;
+    border-radius: 0;
     transition: all 0.3s;
 }
 
 .post-item.today {
-    background: #f5f5f5;
-    border-color: #2a2a2a;
+    background: #000000;
+    border-color: #000000;
+}
+
+.post-item.today a {
+    color: #ffffff;
 }
 
 .post-item:hover {
-    border-color: #2a2a2a;
-    transform: translateX(4px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    opacity: 0.7;
 }
 
 .post-item a {
@@ -419,10 +424,10 @@ a {
 }
 
 .today-badge {
-    background: #2a2a2a;
-    color: #ffffff;
+    background: #ffffff;
+    color: #000000;
     padding: 0.2rem 0.6rem;
-    border-radius: 4px;
+    border-radius: 0;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -431,11 +436,15 @@ a {
 .post-date {
     font-size: 1rem;
     font-weight: 500;
-    color: #2a2a2a;
+    color: #000000;
+}
+
+.post-item.today .post-date {
+    color: #ffffff;
 }
 
 .post-arrow {
-    color: #666;
+    color: #808080;
     font-size: 1.2rem;
     transition: transform 0.3s;
     margin-left: auto;
@@ -443,11 +452,14 @@ a {
 
 .post-item:hover .post-arrow {
     transform: translateX(4px);
-    color: #2a2a2a;
+}
+
+.post-item.today .post-arrow {
+    color: #ffffff;
 }
 
 .post-item.empty {
-    color: #999;
+    color: #808080;
     padding: 1.2rem 1.5rem;
     font-style: italic;
 }
@@ -461,7 +473,7 @@ a {
 .section-title {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #1a1a1a;
+    color: #000000;
 }
 
 .docs-grid {
@@ -471,54 +483,57 @@ a {
 }
 
 .doc-card {
-    background: #fafafa;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 0;
     padding: 2rem;
     transition: all 0.3s;
 }
 
 .doc-card:hover {
-    border-color: #2a2a2a;
-    transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    opacity: 0.7;
 }
 
 .doc-card h4 {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
-    color: #1a1a1a;
+    color: #000000;
 }
 
 .doc-card p {
-    color: #666;
+    color: #808080;
     line-height: 1.6;
 }
 
 /* Footer */
 .footer {
-    background: #2a2a2a;
-    padding: 3rem 0;
+    background: #000000;
+    padding: 2rem 0;
     text-align: center;
-    border-top: 1px solid #e0e0e0;
 }
 
 .footer p {
-    color: #999;
-    margin-bottom: 0.5rem;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+    font-size: 0.8125rem;
+    font-weight: 300;
 }
 
 .footer a {
     color: #ffffff;
-    transition: color 0.3s;
+    transition: opacity 0.3s;
 }
 
 .footer a:hover {
-    color: #e0e0e0;
+    opacity: 0.5;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+
     .nav {
         flex-direction: column;
         gap: 1rem;
@@ -530,15 +545,15 @@ a {
     }
 
     .hero {
-        min-height: 50vh;
+        min-height: 20vh;
     }
 
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .features {
-        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .digest-header {
@@ -558,6 +573,18 @@ a {
 
     .docs-grid {
         grid-template-columns: 1fr;
+    }
+
+    .product-title-row {
+        flex-wrap: wrap;
+    }
+
+    .product-detail-content {
+        padding-left: 1rem;
+    }
+
+    .product-item.expanded .product-detail-content {
+        padding-left: 1rem;
     }
 }
 
